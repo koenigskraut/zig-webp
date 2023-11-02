@@ -21,5 +21,12 @@ pub fn link(b: *std.Build, step: *std.build.CompileStep) void {
         .target = step.target,
         .optimize = step.optimize,
     });
-    step.linkLibrary(libwebp_dep.artifact("webp"));
+    var found: ?*std.Build.Step.Compile = null;
+    for (libwebp_dep.builder.install_tls.step.dependencies.items) |dep_step| {
+        const inst = dep_step.cast(std.Build.Step.InstallArtifact) orelse continue;
+        if (std.mem.eql(u8, inst.artifact.name, "webp")) {
+            found = if (inst.artifact.linkage == .static) inst.artifact else null;
+        }
+    }
+    step.linkLibrary(found.?);
 }
