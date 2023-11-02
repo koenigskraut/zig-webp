@@ -12,8 +12,8 @@ Zig binding for libwebp, libwebp used is a fork with added Zig build system. It 
         .version = "1.0.0",
         .dependencies = .{
     +       .zig_webp = .{
-    +           .url = "https://github.com/koenigskraut/libwebp/archive/6000f56502bfcc7be4e6aada4c801d1b8ab615ce.tar.gz",
-    +           .hash = "12209e1e8f0eb795d1d2f062614a36347736e62c8074fea3fbb0a7e331a0654da4ce",
+    +           .url = "https://github.com/koenigskraut/zig-webp/archive/6453d26c947fe679a99b7c24bc3cb9f916474e91.tar.gz",
+    +           .hash = "1220f5d2221040b2baa61f564d1d03791c6a7d17b831435c6300d1756c6b1d4a0437",
     +       },
         },
     }
