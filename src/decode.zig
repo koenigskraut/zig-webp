@@ -408,21 +408,21 @@ pub fn decodeYUV(data: []const u8) error{DecodingError}!YUVImage {
 /// scanlines. Hence, `output_buffer` is expected to be at least
 /// `output_stride` x picture-height in size.
 pub fn decodeRGBAInto(data: []const u8, output_buffer: []u8, output_stride: u32) error{DecodingError}!void {
-    _ = c.WebPDecodeRGBAInto(data.ptr, data.len, output_buffer, output_buffer.len, @intCast(output_stride)) orelse
+    _ = c.WebPDecodeRGBAInto(data.ptr, data.len, output_buffer.ptr, output_buffer.len, @intCast(output_stride)) orelse
         return error.DecodingError;
 }
 
 /// Same as `decodeRGBAInto()`, but returning A, R, G, B, A, R, G, B... ordered
 /// data.
 pub fn decodeARGBInto(data: []const u8, output_buffer: []u8, output_stride: u32) error{DecodingError}!void {
-    _ = c.WebPDecodeARGBInto(data.ptr, data.len, output_buffer, output_buffer.len, @intCast(output_stride)) orelse
+    _ = c.WebPDecodeARGBInto(data.ptr, data.len, output_buffer.ptr, output_buffer.len, @intCast(output_stride)) orelse
         return error.DecodingError;
 }
 
 /// Same as `decodeRGBAInto()`, but returning B, G, R, A, B, G, R, A...
 /// ordered data.
 pub fn decodeBGRAInto(data: []const u8, output_buffer: []u8, output_stride: u32) error{DecodingError}!void {
-    _ = c.WebPDecodeBGRAInto(data.ptr, data.len, output_buffer, output_buffer.len, @intCast(output_stride)) orelse
+    _ = c.WebPDecodeBGRAInto(data.ptr, data.len, output_buffer.ptr, output_buffer.len, @intCast(output_stride)) orelse
         return error.DecodingError;
 }
 
@@ -430,13 +430,13 @@ pub fn decodeBGRAInto(data: []const u8, output_buffer: []u8, output_stride: u32)
 ///
 /// If the bitstream contains transparency, it is ignored.
 pub fn decodeRGBInto(data: []const u8, output_buffer: []u8, output_stride: u32) error{DecodingError}!void {
-    _ = c.WebPDecodeRGBInto(data.ptr, data.len, output_buffer, output_buffer.len, @intCast(output_stride)) orelse
+    _ = c.WebPDecodeRGBInto(data.ptr, data.len, output_buffer.ptr, output_buffer.len, @intCast(output_stride)) orelse
         return error.DecodingError;
 }
 
 /// Same as `decodeRGBInto()`, but returning B, G, R, B, G, R... ordered data.
 pub fn decodeBGRInto(data: []const u8, output_buffer: []u8, output_stride: u32) error{DecodingError}!void {
-    _ = c.WebPDecodeBGRInto(data.ptr, data.len, output_buffer, output_buffer.len, @intCast(output_stride)) orelse
+    _ = c.WebPDecodeBGRInto(data.ptr, data.len, output_buffer.ptr, output_buffer.len, @intCast(output_stride)) orelse
         return error.DecodingError;
 }
 
