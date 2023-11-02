@@ -1,0 +1,16 @@
+.{
+    .name = "zig-webp",
+    .version = "0.1.0",
+    .paths = .{
+        "src/",
+        "build.zig",
+        "build.zig.zon",
+        "README.md",
+    },
+    .dependencies = .{
+        .libwebp = .{
+            .url = "https://github.com/koenigskraut/libwebp/archive/4d0ecbb45b93672e038a39993b9ec4735cb54149.tar.gz",
+            .hash = "1220fc67eed69bab9b5e063f9937cc23d346c30748578fef11b21d5e6fcb189123a8",
+        },
+    },
+}
