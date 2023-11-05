@@ -9,8 +9,8 @@
     },
     .dependencies = .{
         .libwebp = .{
-            .url = "https://github.com/koenigskraut/libwebp/archive/6000f56502bfcc7be4e6aada4c801d1b8ab615ce.tar.gz",
-            .hash = "12209e1e8f0eb795d1d2f062614a36347736e62c8074fea3fbb0a7e331a0654da4ce",
+            .url = "https://github.com/koenigskraut/libwebp/archive/b5b2b35d8a38be37bb108398ec7f35964cc9567d.tar.gz",
+            .hash = "1220598bcfdf6b4c6cf69fd1d2780f30e193761978e1c3285604edf0bb245e274e20",
         },
     },
 }
