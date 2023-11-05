@@ -25,8 +25,8 @@ pub fn link(b: *std.Build, step: *std.build.CompileStep) void {
     for (libwebp_dep.builder.install_tls.step.dependencies.items) |dep_step| {
         const inst = dep_step.cast(std.Build.Step.InstallArtifact) orelse continue;
         if (std.mem.eql(u8, inst.artifact.name, "webp")) {
-            found = if (inst.artifact.linkage == .static) inst.artifact else null;
+            found = if (inst.artifact.isStaticLibrary()) inst.artifact else continue;
         }
     }
-    step.linkLibrary(found.?);
+    step.linkLibrary(found orelse std.debug.panic("webp not found in artifacts\n", .{}));
 }
