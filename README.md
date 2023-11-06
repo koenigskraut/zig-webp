@@ -10,10 +10,15 @@ Zig binding for libwebp, libwebp used is a fork with added Zig build system. It 
     .{
         .name = "your-project",
         .version = "1.0.0",
+        .paths = .{
+            "src/",
+            "build.zig",
+            "build.zig.zon",
+        },
         .dependencies = .{
     +       .zig_webp = .{
-    +           .url = "https://github.com/koenigskraut/zig-webp/archive/6453d26c947fe679a99b7c24bc3cb9f916474e91.tar.gz",
-    +           .hash = "1220f5d2221040b2baa61f564d1d03791c6a7d17b831435c6300d1756c6b1d4a0437",
+    +           .url = "https://github.com/koenigskraut/zig-webp/archive/1358da0b9f486e5ea04c149fed4f57f70a395363.tar.gz",
+    +           .hash = "122072edc915633a032c53bacd9b1035d44649242b323d97a7d93dd540c607a2d7d3",            
     +       },
         },
     }
